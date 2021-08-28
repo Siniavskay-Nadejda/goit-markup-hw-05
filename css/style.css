@@ -95,17 +95,43 @@ nav {
 }
 
 .site-nav .link {
+  position: relative;
   display: block;
   padding-top: 32px;
   padding-bottom: 32px;
-
-  font-style: 400;
+  font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.4;
   letter-spacing: 0.02em;
   color: var(--title-text-color);
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.site-nav .link::after {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  content: " ";
+  display: block;
+  width: 100%;
+  height: 5px;
+  border-radius: 2px;
+  background-color: var(--accent-text-color);
+  opacity: 0;
+  transition: opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.site-nav .link:hover,
+.site-nav .link:focus {
+  color: var(--accent-text-color);
+}
+
+.site-nav .link.current::after {
+  opacity: 1;
+}
+
 /*  Контакты*/
 .contacts-nav {
   display: flex;
@@ -116,18 +142,6 @@ nav {
   margin-left: 50px;
 }
 
-.contacts-nav .link {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.02em;
-  color: var(--primary-text-colo);
-}
-.site-nav .link:hover,
-.site-nav .link:focus {
-  color: var(--accent-text-color);
-}
 .item {
   align-items: center;
   justify-content: center;
@@ -138,7 +152,11 @@ nav {
   line-height: 1.14;
   color: #757575;
   fill: #757575;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .link-icon-mail:hover,
 .link-icon-mail:focus {
   color: var(--accent-text-color);
@@ -222,6 +240,29 @@ nav {
 }
 .section-tab {
   padding-top: 0px;
+}
+.thamb {
+  display: flex;
+  position: relative;
+}
+.thamb-text {
+  display: flex;
+  position: absolute;
+  width: 370px;
+  height: 70px;
+  background-color: rgba(47, 48, 58, 0.8);
+
+  font-style: 400;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #ffffff;
+  align-items: center;
+  justify-content: center;
+  bottom: 0px;
+  right: 0px;
 }
 
 /* Приемущества */
@@ -318,8 +359,13 @@ nav {
   width: 44px;
   height: 44px;
   padding: 12px;
+  border-radius: 100px;
   fill: #afb1b8;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .social-link:hover,
 .social-link:focus {
   border-radius: 100px;
@@ -373,10 +419,12 @@ nav {
 
 .footer-title {
   margin-bottom: 20px;
-  font-weight: 400;
+  font-style: 400;
+  font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
-  font-style: normal;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
   color: #ffffff;
 }
 .footer-cut {
@@ -394,6 +442,9 @@ nav {
   border-radius: 100px;
   background-color: rgba(255, 255, 255, 0.1);
   fill: #ffffff;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-kard:hover,
 .social-kard:focus {
@@ -416,6 +467,9 @@ nav {
   border-radius: 2px;
   padding: 16px 32px;
   fill: #afb1b8;
+  transition-property: border, fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icon-hover:hover,
 .icon-hover:focus {
@@ -445,6 +499,9 @@ nav {
   letter-spacing: 0.03em;
   color: var(--title-text-color);
   border: 0px;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button-filter:hover,
@@ -474,7 +531,11 @@ nav {
 .set-element {
   margin-left: 30px;
   margin-top: 30px;
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .set-element:hover {
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.16), 0px 0px 4px rgba(0, 0, 0, 0.06),
     0px 0px 1px rgba(0, 0, 0, 0.12);
